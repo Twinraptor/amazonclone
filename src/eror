@@ -1,0 +1,47 @@
+var addTwoNumbers = function(l1, l2) {
+    
+    let r1=l1;
+    let r2=l2;
+    let l3 = new ListNode(0);
+    let r3 = l3;
+    let carry = 0;
+    let r4;
+    while (r1 && r2) {
+        let temp = r1.val + r2.val +carry;
+        if (temp >= 10) {
+            carry= 1;
+        } else {
+            carry= 0;
+        }
+        r3.val= (temp % 10);
+        r1 = r1.next;
+        r2 = r2.next;
+        if (r1 || r2){
+            r3.next = new ListNode();
+            r3 = r3.next;
+        } 
+    }
+    if (carry == 1) {
+        r3.next= new ListNode(1);
+        carry == 0;
+    }
+    if (r1) {
+        r4 = r1;
+    } else {
+        r4 = r2;
+    }
+    while (r4) {
+        if (carry == 1) {
+            r3.val ++;
+            carry = 0;
+        }
+        r3.val += r4.val;
+        if (r4.next){
+            r3.next=new ListNode();
+            r4=r4.next;
+            r3=r3.next;
+        }
+        
+    }
+    return l3;
+};

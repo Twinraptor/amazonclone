@@ -1,0 +1,15 @@
+.footer {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  background-color: #670067;
+  position: sticky;
+  bottom: 0;
+  z-index: 100;
+}
+.disclaimer {
+  font-weight: lighter;
+  font-size: 10px;
+  color: white;
+  justify-content: flex-end;
+}
